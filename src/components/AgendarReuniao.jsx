@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CAL_LINK = "evorise-group/30min";
+const CAL_LINK = "https://cal.com/evorise-ai-ct3gkx/30min";
 
 export default function AgendarReuniao() {
   const [isLoading, setIsLoading] = useState(true);
