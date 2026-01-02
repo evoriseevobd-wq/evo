@@ -12,14 +12,6 @@ export default function AgendarReuniao() {
   return (
     <div className="mx-auto max-w-5xl">
       <div className="rounded-3xl border border-purple-500/20 bg-black/40 p-4 shadow-[0_30px_80px_-50px_rgba(124,58,237,0.45)] backdrop-blur-sm md:p-8">
-        <div className="mb-6 text-center">
-          <p className="text-sm text-gray-300 md:text-base">
-            Deixe que a automação faça o trabalho pesado enquanto você fica no crescimento.
-          </p>
-          <p className="mt-2 text-sm text-gray-400">
-            Fale com nossa equipe e leve seus resultados para o próximo nível.
-          </p>
-        </div>
 
         {isLoading && (
           <div className="flex min-h-[700px] items-center justify-center">
@@ -41,20 +33,6 @@ export default function AgendarReuniao() {
             allow="camera;microphone;display-capture"
             title="Agendar Reunião com Evorise"
           />
-        </div>
-
-        <div className="mt-4 text-center">
-          <p className="text-xs text-gray-500">
-            Ou{" "}
-            <a
-              href={`https://cal.com/${CAL_LINK}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-purple-400 underline transition hover:text-purple-300"
-            >
-              abra o calendário em nova aba
-            </a>
-          </p>
         </div>
       </div>
     </div>
