@@ -97,7 +97,7 @@ const testimonials = [
     name: "Beatriz Costa",
     role: "Fundadora, Nimbus Ventures",
     quote:
-      "Foi além da tecnologia. A Evorise entendeu nosso negócio, o estilo da marca e entregou uma experiência completa — estética e eficiente.",
+      "Foi além da tecnologia. A Evorise entendeu nosso negócio e entregou uma experiência completa — Facil e eficiente.",
   },
 ];
 
