@@ -238,7 +238,7 @@ export default function App() {
             className="relative z-10 max-w-4xl text-center"
           >
             <span className="inline-flex items-center rounded-full border border-purple-500/40 px-4 py-2 text-xs uppercase tracking-[0.35em] text-purple-200">
-              automação e softwares simples
+              automação e softwares
             </span>
             <h1 className="mt-6 text-4xl font-semibold leading-tight text-purple-200 md:text-6xl md:leading-[1.15]">
               Automação e softwares simples para negócios que querem crescer com eficiência e clareza.
