@@ -186,9 +186,9 @@ export default function App() {
 
   const socialLinks = useMemo(
     () => [
-      { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-      { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
-      { icon: FaWhatsapp, href: "https://wa.me/5581999999999", label: "WhatsApp" },
+      
+      { icon: FaInstagram, href: "https://instagram.com/evoriseai", label: "Instagram" },
+    
     ],
     []
   );
