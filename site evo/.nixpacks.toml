@@ -1,8 +1,8 @@
 [phases.install]
-cmds = ["npm install --include=dev"]
+cmds = ["npm install --production=false"]
 
 [phases.build]
 cmds = ["npm run build"]
 
 [start]
-cmd = "npm run preview -- --host 0.0.0.0 --port 4173"
+cmd = "npm run preview -- --host 0.0.0.0 --port $PORT"
