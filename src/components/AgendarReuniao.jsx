@@ -1,53 +1,13 @@
-import { useEffect } from "react";
+import { useState } from "react";
 
 const CAL_LINK = "evorise-group/30min";
-const CAL_CONTAINER_ID = "cal-inline-evorise";
-const CAL_ORIGIN = "https://app.cal.com";
-const CAL_SCRIPT_SRC = `${CAL_ORIGIN}/embed/embed.js`;
-const CAL_SCRIPT_ID = "cal-embed-script";
 
 export default function AgendarReuniao() {
-  useEffect(() => {
-    const win = window;
+  const [isLoading, setIsLoading] = useState(true);
 
-    win.Cal =
-      win.Cal ||
-      function (...args) {
-        (win.Cal.q = win.Cal.q || []).push(args);
-      };
-
-    const initCalEmbed = () => {
-      if (!win.Cal) return;
-
-      win.Cal("init", { origin: CAL_ORIGIN });
-
-      win.Cal("inline", {
-        elementOrSelector: `#${CAL_CONTAINER_ID}`,
-        link: CAL_LINK,
-        config: { theme: "dark", layout: "month_view" },
-      });
-    };
-
-    let script = document.getElementById(CAL_SCRIPT_ID);
-
-    if (!script) {
-      script = document.createElement("script");
-      script.id = CAL_SCRIPT_ID;
-      script.src = CAL_SCRIPT_SRC;
-      script.async = true;
-      script.onload = initCalEmbed;
-      document.body.appendChild(script);
-    } else {
-      initCalEmbed();
-    }
-
-    return () => {
-      const container = document.getElementById(CAL_CONTAINER_ID);
-      if (container) {
-        container.innerHTML = "";
-      }
-    };
-  }, []);
+  const handleLoad = () => {
+    setIsLoading(false);
+  };
 
   return (
     <div className="mx-auto max-w-5xl">
@@ -60,16 +20,42 @@ export default function AgendarReuniao() {
             Fale com nossa equipe e leve seus resultados para o próximo nível.
           </p>
         </div>
-        
-        <div
-          id={CAL_CONTAINER_ID}
-          className="min-h-[600px] w-full overflow-hidden rounded-2xl"
-          style={{
-            width: "100%",
-            height: "100%",
-            overflow: "scroll",
-          }}
-        />
+
+        {isLoading && (
+          <div className="flex min-h-[700px] items-center justify-center">
+            <div className="text-center">
+              <div className="mb-4 inline-block h-12 w-12 animate-spin rounded-full border-4 border-purple-500/30 border-t-purple-500"></div>
+              <p className="text-sm text-gray-400">Carregando calendário...</p>
+            </div>
+          </div>
+        )}
+
+        <div className={`relative ${isLoading ? "hidden" : ""}`}>
+          <iframe
+            src={`https://cal.com/${CAL_LINK}?embed=true&theme=dark&layout=month_view`}
+            width="100%"
+            height="700"
+            frameBorder="0"
+            onLoad={handleLoad}
+            className="rounded-2xl"
+            allow="camera;microphone;display-capture"
+            title="Agendar Reunião com Evorise"
+          />
+        </div>
+
+        <div className="mt-4 text-center">
+          <p className="text-xs text-gray-500">
+            Ou{" "}
+            <a
+              href={`https://cal.com/${CAL_LINK}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple-400 underline transition hover:text-purple-300"
+            >
+              abra o calendário em nova aba
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );
