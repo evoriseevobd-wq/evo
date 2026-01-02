@@ -41,19 +41,19 @@ const navLinks = [
 
 const services = [
   {
-    title: "Automação Operacional",
+    title: "Automação Inteligente",
     description:
-      "Tornamos o dia a dia da sua operação mais ágil e organizado. Automatizamos tarefas repetitivas, conectamos ferramentas e criamos fluxos inteligentes que economizam tempo e reduzem erros.",
+      "Simplificamos o dia a dia com fluxos automáticos que reduzem erros e liberam tempo, sem complicar sua rotina.",
   },
   {
-    title: "Integração Inteligente",
+    title: "Plataformas de Organização & CRM",
     description:
-      "Fazemos suas plataformas e dados trabalharem juntos. Unificamos sistemas, otimizamos a comunicação entre equipes e garantimos uma operação fluida, sem retrabalho ou confusão.",
+      "Criamos um lugar único para organizar clientes, equipe e processos. Tudo conectado, simples e fácil de usar.",
   },
   {
     title: "Sistemas Personalizados",
     description:
-      "Desenvolvemos sistemas e painéis sob medida para o seu negócio. Cada solução reflete a identidade da sua marca e potencializa decisões com clareza, estética e inteligência.",
+      "Desenvolvemos sistemas sob medida com o essencial para funcionar bem, sem excesso de complexidade.",
   },
 ];
 
@@ -212,14 +212,14 @@ export default function App() {
             </nav>
             <a
               href="#contato"
-              className="rounded-full border border-purple-500/60 px-5 py-2 text-xs font-medium uppercase tracking-[0.2em] text-purple-200 transition hover:bg-purple-600/20"
+              className="inline-flex items-center justify-center rounded-full border border-purple-500/60 px-5 py-2 text-center text-xs font-medium uppercase tracking-[0.2em] leading-none text-purple-200 transition hover:bg-purple-600/20"
             >
               Agendar Reunião
             </a>
           </div>
           <a
             href="#contato"
-            className="rounded-full border border-purple-500/60 px-4 py-2 text-[0.68rem] font-medium uppercase tracking-[0.3em] text-purple-200 transition hover:bg-purple-600/20 md:hidden"
+            className="inline-flex items-center justify-center rounded-full border border-purple-500/60 px-4 py-2 text-center text-[0.68rem] font-medium uppercase tracking-[0.3em] leading-none text-purple-200 transition hover:bg-purple-600/20 md:hidden"
           >
             Agendar Reunião
           </a>
@@ -238,14 +238,15 @@ export default function App() {
             className="relative z-10 max-w-4xl text-center"
           >
             <span className="inline-flex items-center rounded-full border border-purple-500/40 px-4 py-2 text-xs uppercase tracking-[0.35em] text-purple-200">
-              excelência em automação
+              automação e softwares simples
             </span>
             <h1 className="mt-6 text-4xl font-semibold leading-tight text-purple-200 md:text-6xl md:leading-[1.15]">
-              Automação inteligente para negócios que querem crescer com estilo, eficiência e resultado.
+              Automação e softwares simples para negócios que querem crescer com eficiência e clareza.
             </h1>
             <p className="mt-6 text-base text-gray-300 md:text-lg">
-              A Evorise transforma processos em experiências. Criamos ecossistemas digitais que organizam, encantam e
-              elevam a performance da sua marca — do atendimento à operação.
+              A Evorise transforma processos em organização real. Criamos plataformas claras, CRM e fluxos digitais que
+              conectam dados, equipes e decisões com leveza. Tudo explicado de forma simples, mesmo para quem não é da
+              área.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
@@ -277,13 +278,13 @@ export default function App() {
               Integramos tecnologia, estética e propósito para negócios que valorizam performance e identidade.
             </h2>
             <p className="text-gray-300">
-              A Evorise nasceu com o propósito de tornar a automação algo simples, inteligente e conectado à essência de
-              cada marca. Acreditamos que tecnologia não é só eficiência — é experiência.
+              A Evorise nasceu para tornar a automação e os softwares de gestão simples, eficientes e conectados à
+              essência de cada marca. Acreditamos que tecnologia não é só eficiência — é clareza.
             </p>
             <p className="text-gray-400">
-              Conduzimos cada projeto com olhar estratégico e sensibilidade estética, garantindo que operação e marca
-              trabalhem em harmonia. Nosso compromisso é com a evolução real do seu negócio: mais organização, mais
-              presença e mais impacto.
+              Conduzimos cada projeto com clareza e direção, explicando o que está sendo feito e por que isso resolve o
+              problema. Nosso compromisso é com a evolução real do seu negócio: mais organização, mais presença e mais
+              impacto.
             </p>
           </motion.div>
 
@@ -324,8 +325,8 @@ export default function App() {
               <span className="text-xs uppercase tracking-[0.3em] text-purple-300">nossas soluções</span>
               <h2 className="mt-4 text-4xl font-semibold text-purple-100">Soluções Evorise</h2>
               <p className="mt-4 text-gray-300">
-                Orquestramos sistemas digitais que elevam o desempenho e a experiência da sua marca. Cada projeto é
-                pensado para simplificar processos, integrar equipes e entregar resultados com estética e precisão.
+                Orquestramos automações e softwares simples que elevam o desempenho da sua marca. Explicamos cada etapa
+                de forma direta, para que qualquer pessoa entenda o valor e o funcionamento.
               </p>
             </motion.div>
 
@@ -409,7 +410,7 @@ export default function App() {
               Tecnologias que potencializam nossos projetos
             </h2>
             <p className="mt-4 text-gray-400">
-              Utilizamos ferramentas líderes de mercado para criar automações inteligentes, conectadas e escaláveis.
+              Utilizamos ferramentas líderes de mercado para criar automações e softwares simples, conectados e escaláveis.
             </p>
           </motion.div>
           <motion.div
@@ -455,7 +456,7 @@ export default function App() {
             </h2>
             <p className="mt-4 text-gray-400">
               Parcerias que transformaram operações, melhoraram a gestão e elevaram a imagem de cada negócio com
-              automação e estratégia.
+              automação, organização e estratégia.
             </p>
           </motion.div>
 
@@ -496,7 +497,7 @@ export default function App() {
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-purple-300">Evorise</p>
             <p className="mt-2 max-w-sm text-xs text-gray-400">
-              Automatizamos experiências de alto padrão com precisão tecnológica e estética impecável.
+              Criamos automações e softwares simples com precisão tecnológica e estética impecável.
             </p>
           </div>
           <div className="flex items-center gap-6 text-xl text-purple-300">
