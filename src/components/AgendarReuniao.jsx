@@ -35,19 +35,13 @@ export default function AgendarReuniao() {
       script.id = CAL_SCRIPT_ID;
       script.src = CAL_SCRIPT_SRC;
       script.async = true;
-      script.onload = () => {
-        script?.setAttribute("data-cal-loaded", "true");
-        initCalEmbed();
-      };
+      script.onload = initCalEmbed;
       document.body.appendChild(script);
-    } else if (script.getAttribute("data-cal-loaded") === "true") {
-      initCalEmbed();
     } else {
-      script.addEventListener("load", initCalEmbed);
+      initCalEmbed();
     }
 
     return () => {
-      script?.removeEventListener("load", initCalEmbed);
       const container = document.getElementById(CAL_CONTAINER_ID);
       if (container) {
         container.innerHTML = "";
@@ -56,21 +50,27 @@ export default function AgendarReuniao() {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-[#0b0216] to-[#120228] py-20 px-4 text-center text-white">
-      <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-        Agende uma chamada com a Evorise
-      </h2>
-      <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-        Deixe que a automação faça o trabalho pesado enquanto você foca no
-        crescimento. Fale com nossa equipe e leve seus resultados para o próximo
-        nível.
-      </p>
-
-      <div
-        id={CAL_CONTAINER_ID}
-        className="calcom-embed mx-auto max-w-5xl rounded-2xl border border-purple-500/20 shadow-lg"
-        style={{ width: "100%", height: "750px" }}
-      />
-    </section>
+    <div className="mx-auto max-w-5xl">
+      <div className="rounded-3xl border border-purple-500/20 bg-black/40 p-4 shadow-[0_30px_80px_-50px_rgba(124,58,237,0.45)] backdrop-blur-sm md:p-8">
+        <div className="mb-6 text-center">
+          <p className="text-sm text-gray-300 md:text-base">
+            Deixe que a automação faça o trabalho pesado enquanto você fica no crescimento.
+          </p>
+          <p className="mt-2 text-sm text-gray-400">
+            Fale com nossa equipe e leve seus resultados para o próximo nível.
+          </p>
+        </div>
+        
+        <div
+          id={CAL_CONTAINER_ID}
+          className="min-h-[600px] w-full overflow-hidden rounded-2xl"
+          style={{
+            width: "100%",
+            height: "100%",
+            overflow: "scroll",
+          }}
+        />
+      </div>
+    </div>
   );
 }
