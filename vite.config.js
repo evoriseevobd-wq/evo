@@ -4,6 +4,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   preview: {
-    allowedHosts: ["kds-zevorise.dahead.easypanel.host"],
+    allowedHosts: ["evorise.com.br"],
   },
 });
