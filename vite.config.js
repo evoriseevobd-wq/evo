@@ -1,9 +1,12 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  preview: {
-    allowedHosts: ["evorise.com.br"],
-  },
-});
+  server: {
+    host: true,
+    preview: {
+      allowedHosts: ['evoriseai.com.br']
+    }
+  }
+})
