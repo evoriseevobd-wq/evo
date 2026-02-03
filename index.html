@@ -496,17 +496,14 @@ function formatTime(timestamp) {
   
   const date = new Date(timestamp);
   
-  // Força conversão para horário de Brasília (GMT-3)
-  const options = { 
-    hour: '2-digit', 
-    minute: '2-digit',
-    timeZone: 'America/Sao_Paulo',
-    hour12: false
-  };
+  // Ajusta manualmente para GMT-3 (Brasília)
+  const utcHours = date.getUTCHours();
+  const localHours = (utcHours - 3 + 24) % 24; // Ajusta -3 horas
+  const minutes = date.getUTCMinutes();
   
-  return new Intl.DateTimeFormat('pt-BR', options).format(date);
+  return `${String(localHours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
 }
-
+  
     function showLoading(s) { document.getElementById('loading').classList.toggle('hidden', !s); }
     function showError() { document.getElementById('loading').classList.add('hidden'); document.getElementById('content').classList.add('hidden'); document.getElementById('error').classList.remove('hidden'); }
     function showContent(s) { document.getElementById('content').classList.toggle('hidden', !s); document.getElementById('error').classList.add('hidden'); }
