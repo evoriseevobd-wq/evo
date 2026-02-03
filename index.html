@@ -496,12 +496,15 @@ function formatTime(timestamp) {
   
   const date = new Date(timestamp);
   
-  // Converte para timezone de São Paulo (Brasil)
-  return date.toLocaleTimeString('pt-BR', { 
+  // Força conversão para horário de Brasília (GMT-3)
+  const options = { 
     hour: '2-digit', 
     minute: '2-digit',
-    timeZone: 'America/Sao_Paulo'
-  });
+    timeZone: 'America/Sao_Paulo',
+    hour12: false
+  };
+  
+  return new Intl.DateTimeFormat('pt-BR', options).format(date);
 }
 
     function showLoading(s) { document.getElementById('loading').classList.toggle('hidden', !s); }
