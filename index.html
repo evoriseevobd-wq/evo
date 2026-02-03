@@ -462,7 +462,7 @@ console.log('🔍 Tracking code:', trackingCode);
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-title">${labels[status]}</div>
-            <div class="timeline-time">${timestamp ? formatTime(timestamp) : isActive ? 'Agora' : 'Aguardando...'}</div>
+            <div class="timeline-time">${timestamp ? formatTime(timestamp) : 'Aguardando...'}</div>
           </div>
         `;
         timeline.appendChild(item);
