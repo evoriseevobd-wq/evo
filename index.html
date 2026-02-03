@@ -383,7 +383,18 @@
   <script>
     const API_URL = 'https://kds-backend.dahead.easypanel.host/api/v1/tracking';
     const urlParams = new URLSearchParams(window.location.search);
-    const trackingCode = urlParams.get('code') || '2ee98ab8_9';
+    const trackingCode = urlParams.get('code');
+
+// Se não tiver código na URL, mostra erro
+if (!trackingCode) {
+  showError();
+  document.querySelector('.error h2').textContent = 'Link inválido';
+  document.querySelector('.error p').textContent = 'Por favor, acesse o link enviado no WhatsApp.';
+  throw new Error('Código de rastreamento não fornecido');
+}
+
+console.log('🔍 Tracking code:', trackingCode);
+
     let previousStatus = null;
     
     const STATUS_CONFIG = {
@@ -480,10 +491,18 @@
       return new Intl.NumberFormat('pt-BR', {style:'currency',currency:'BRL'}).format(v);
     }
 
-    function formatTime(t) {
-      if (!t) return 'N/A';
-      return new Date(t).toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'});
-    }
+function formatTime(timestamp) {
+  if (!timestamp) return 'N/A';
+  
+  const date = new Date(timestamp);
+  
+  // Converte para timezone de São Paulo (Brasil)
+  return date.toLocaleTimeString('pt-BR', { 
+    hour: '2-digit', 
+    minute: '2-digit',
+    timeZone: 'America/Sao_Paulo'
+  });
+}
 
     function showLoading(s) { document.getElementById('loading').classList.toggle('hidden', !s); }
     function showError() { document.getElementById('loading').classList.add('hidden'); document.getElementById('content').classList.add('hidden'); document.getElementById('error').classList.remove('hidden'); }
